@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "vision")
+set(vision_MAINTAINER "mandeep <mandeep@todo.todo>")
+set(vision_DEPRECATED "")
+set(vision_VERSION "0.0.0")
+set(vision_BUILD_DEPENDS "rospy" "std_msgs" "geometry_msgs" "sensor_msgs" "message_generation")
+set(vision_RUN_DEPENDS "rospy" "std_msgs" "geometry_msgs" "sensor_msgs" "message_runtime")
+set(vision_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,8 @@
+prefix=/home/abeni/rob/install
+
+Name: owyl_behavior
+Description: Description of owyl_behavior
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/abeni/rob/install/lib 
+Requires: 

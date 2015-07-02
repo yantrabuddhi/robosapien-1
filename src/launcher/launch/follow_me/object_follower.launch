@@ -1,0 +1,8 @@
+<launch>
+	<include file="$(find cv_camera)/launch/cv_camera.launch" />
+	<include file="$(find vision)/launch/vision.launch" />
+	<include file="$(find tld_tracker)/launch/ros_tld_gui.launch" />
+	<include file="$(find tld_tracker)/launch/ros_tld_tracker.launch" /> 
+	<include file="$(find robot)/launch/body_driver.launch" />
+	<include file="$(find follow_me)/launch/object_follower.launch" />
+</launch>

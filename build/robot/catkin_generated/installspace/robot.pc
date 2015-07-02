@@ -1,0 +1,8 @@
+prefix=/home/abeni/rob/install
+
+Name: robot
+Description: Description of robot
+Version: 0.0.0
+Cflags: -I/home/abeni/rob/install/include
+Libs: -L/home/abeni/rob/install/lib 
+Requires: rospy std_msgs message_runtime

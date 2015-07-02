@@ -1,0 +1,3 @@
+<launch>
+	<node name="moveForward" pkg="follow_me" type="moveForward.py" />
+</launch>

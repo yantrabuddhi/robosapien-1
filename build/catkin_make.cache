@@ -1,0 +1,2 @@
+cv_camera:find_object_2d:follow_me:launcher:owyl_behavior:robot:tld_msgs:tld_tracker:vision:zeno_dial
+-DCATKIN_DEVEL_PREFIX=/home/abeni/rob/devel -DCMAKE_INSTALL_PREFIX=/home/abeni/rob/install -G Unix Makefiles

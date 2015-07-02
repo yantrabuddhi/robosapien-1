@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "follow_me")
+set(follow_me_MAINTAINER "icog <icog@todo.todo>")
+set(follow_me_DEPRECATED "")
+set(follow_me_VERSION "0.0.0")
+set(follow_me_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
+set(follow_me_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
+set(follow_me_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,11 @@
+-I/home/abeni/rob/devel/include
+-I/usr/include/opencv
+-I/usr/include
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_PACKAGE_NAME="find_object_2d"
+-DROSCONSOLE_BACKEND_LOG4CXX
+-DPROJECT_PREFIX="find_object"
+-DPROJECT_VERSION="“0.5.1”"
+-o
+/home/abeni/rob/build/find_object_2d/src_x/moc_RectItem.cxx
+/home/abeni/rob/src/find_object_2d/src_x/RectItem.h

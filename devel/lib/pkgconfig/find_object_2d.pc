@@ -1,0 +1,8 @@
+prefix=/home/abeni/rob/devel
+
+Name: find_object_2d
+Description: Description of find_object_2d
+Version: 0.5.1
+Cflags: -I/home/abeni/rob/devel/include
+Libs: -L/home/abeni/rob/devel/lib 
+Requires: cv_bridge roscpp rospy sensor_msgs std_msgs image_transport message_filters pcl_ros tf

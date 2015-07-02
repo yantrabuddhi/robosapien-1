@@ -1,0 +1,4 @@
+<launch>
+
+<include file="$(find robot)/launch/rsv1_driver.launch" />
+</launch>

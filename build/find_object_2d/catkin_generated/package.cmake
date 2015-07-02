@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "find_object_2d")
+set(find_object_2d_MAINTAINER "Mathieu Labbe <matlabbe@gmail.com>")
+set(find_object_2d_DEPRECATED "")
+set(find_object_2d_VERSION "0.5.1")
+set(find_object_2d_BUILD_DEPENDS "cv_bridge" "roscpp" "rospy" "sensor_msgs" "std_msgs" "std_srvs" "image_transport" "message_filters" "pcl_ros" "tf")
+set(find_object_2d_RUN_DEPENDS "cv_bridge" "roscpp" "rospy" "sensor_msgs" "std_msgs" "std_srvs" "image_transport" "message_filters" "pcl_ros" "tf")
+set(find_object_2d_BUILDTOOL_DEPENDS "catkin" "genmsg")

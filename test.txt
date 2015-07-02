@@ -1,0 +1,367 @@
+[INFO] [WallTime: 1433836628.447496] face_detect started, listening for image input on topic /cv_camera/image_raw, publishing on topic facedetect
+[INFO] [WallTime: 1433836636.252949] faces: 
+  - 
+    top_left: 
+      x: 0.419444444444
+      y: 0.316666666667
+      z: 0.0
+    width_height: 
+      x: 0.311111111111
+      y: 0.466666666667
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836636.382103] faces: 
+  - 
+    top_left: 
+      x: 0.4
+      y: 0.291666666667
+      z: 0.0
+    width_height: 
+      x: 0.313888888889
+      y: 0.470833333333
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836636.521079] faces: 
+  - 
+    top_left: 
+      x: 0.397222222222
+      y: 0.2875
+      z: 0.0
+    width_height: 
+      x: 0.3
+      y: 0.45
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836636.663984] faces: 
+  - 
+    top_left: 
+      x: 0.386111111111
+      y: 0.270833333333
+      z: 0.0
+    width_height: 
+      x: 0.311111111111
+      y: 0.466666666667
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836636.793767] faces: 
+  - 
+    top_left: 
+      x: 0.366666666667
+      y: 0.258333333333
+      z: 0.0
+    width_height: 
+      x: 0.325
+      y: 0.4875
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836636.926083] faces: 
+  - 
+    top_left: 
+      x: 0.366666666667
+      y: 0.279166666667
+      z: 0.0
+    width_height: 
+      x: 0.308333333333
+      y: 0.4625
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836637.059238] faces: 
+  - 
+    top_left: 
+      x: 0.344444444444
+      y: 0.275
+      z: 0.0
+    width_height: 
+      x: 0.316666666667
+      y: 0.475
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836637.190768] faces: 
+  - 
+    top_left: 
+      x: 0.333333333333
+      y: 0.270833333333
+      z: 0.0
+    width_height: 
+      x: 0.319444444444
+      y: 0.479166666667
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836637.325513] faces: 
+  - 
+    top_left: 
+      x: 0.333333333333
+      y: 0.275
+      z: 0.0
+    width_height: 
+      x: 0.316666666667
+      y: 0.475
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836637.455229] faces: 
+  - 
+    top_left: 
+      x: 0.330555555556
+      y: 0.266666666667
+      z: 0.0
+    width_height: 
+      x: 0.322222222222
+      y: 0.483333333333
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836637.587346] faces: 
+  - 
+    top_left: 
+      x: 0.341666666667
+      y: 0.270833333333
+      z: 0.0
+    width_height: 
+      x: 0.319444444444
+      y: 0.479166666667
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836637.726385] faces: 
+  - 
+    top_left: 
+      x: 0.347222222222
+      y: 0.283333333333
+      z: 0.0
+    width_height: 
+      x: 0.305555555556
+      y: 0.458333333333
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836637.859543] faces: 
+  - 
+    top_left: 
+      x: 0.336111111111
+      y: 0.275
+      z: 0.0
+    width_height: 
+      x: 0.322222222222
+      y: 0.483333333333
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836637.993163] faces: 
+  - 
+    top_left: 
+      x: 0.333333333333
+      y: 0.270833333333
+      z: 0.0
+    width_height: 
+      x: 0.325
+      y: 0.4875
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836638.127644] faces: 
+  - 
+    top_left: 
+      x: 0.341666666667
+      y: 0.283333333333
+      z: 0.0
+    width_height: 
+      x: 0.311111111111
+      y: 0.466666666667
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836638.256203] faces: 
+  - 
+    top_left: 
+      x: 0.347222222222
+      y: 0.2875
+      z: 0.0
+    width_height: 
+      x: 0.305555555556
+      y: 0.458333333333
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836638.388796] faces: 
+  - 
+    top_left: 
+      x: 0.344444444444
+      y: 0.279166666667
+      z: 0.0
+    width_height: 
+      x: 0.313888888889
+      y: 0.470833333333
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836638.522485] faces: 
+  - 
+    top_left: 
+      x: 0.352777777778
+      y: 0.291666666667
+      z: 0.0
+    width_height: 
+      x: 0.305555555556
+      y: 0.458333333333
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836638.662702] faces: 
+  - 
+    top_left: 
+      x: 0.35
+      y: 0.2875
+      z: 0.0
+    width_height: 
+      x: 0.308333333333
+      y: 0.4625
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+[INFO] [WallTime: 1433836638.817937] faces: 
+  - 
+    top_left: 
+      x: 0.355555555556
+      y: 0.2875
+      z: 0.0
+    width_height: 
+      x: 0.308333333333
+      y: 0.4625
+      z: 0.0
+    name: 
+      data: ''
+    mismatch: 
+      data: 0.0
+ref_img_width: 360
+ref_img_height: 240
+... logging to /home/abeni/.ros/log/1fa21de0-0e7d-11e5-bbad-002318fbef96/roslaunch-abeni-PORTEGE-R700-10611.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/abeni/rob/src/launcher/launch/follow_me/face_follower_body.launch
+[1mstarted roslaunch server http://abeni-PORTEGE-R700:33604/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /cv_camera/device_id: 1
+ * /cv_camera/flip_image: False
+ * /cv_camera/image_height: 480
+ * /cv_camera/image_width: 720
+ * /cv_camera/video standard: PAL
+ * /rosdistro: jade
+ * /rosversion: 1.11.13
+
+NODES
+  /
+    body_driver_node (robot/body_driver.py)
+    cv_camera (cv_camera/cv_camera_node)
+    face_detect_node (vision/face_detect.py)
+    face_follower_body (follow_me/face_follower_body.py)
+
+auto-starting new master
+[1mprocess[master]: started with pid [10623][0m
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/abeni/rob/src/launcher/launch/follow_me/face_follower_body.launch http://localhost:11311
+[1msetting /run_id to 1fa21de0-0e7d-11e5-bbad-002318fbef96[0m
+[1mprocess[rosout-1]: started with pid [10636][0m
+started core service [/rosout]
+[1mprocess[cv_camera-2]: started with pid [10653][0m
+[1mprocess[face_detect_node-3]: started with pid [10669][0m
+[1mprocess[body_driver_node-4]: started with pid [10674][0m
+[1mprocess[face_follower_body-5]: started with pid [10681][0m
+[face_follower_body-5] killing on exit
+[body_driver_node-4] killing on exit
+[face_detect_node-3] killing on exit
+[cv_camera-2] killing on exit
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

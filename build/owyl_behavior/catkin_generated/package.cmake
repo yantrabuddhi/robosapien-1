@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "owyl_behavior")
+set(owyl_behavior_MAINTAINER "mandeep <mandeep@todo.todo>")
+set(owyl_behavior_DEPRECATED "")
+set(owyl_behavior_VERSION "0.0.0")
+set(owyl_behavior_BUILD_DEPENDS "rospy" "std_msgs")
+set(owyl_behavior_RUN_DEPENDS "rospy" "std_msgs")
+set(owyl_behavior_BUILDTOOL_DEPENDS "catkin")

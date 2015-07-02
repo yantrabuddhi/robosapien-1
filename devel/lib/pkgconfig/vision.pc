@@ -1,0 +1,8 @@
+prefix=/home/abeni/rob/devel
+
+Name: vision
+Description: Description of vision
+Version: 0.0.0
+Cflags: -I/home/abeni/rob/devel/include
+Libs: -L/home/abeni/rob/devel/lib 
+Requires: rospy std_msgs message_runtime

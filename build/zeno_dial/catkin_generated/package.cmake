@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "zeno_dial")
+set(zeno_dial_MAINTAINER "mandeep <mandeep@todo.todo>")
+set(zeno_dial_DEPRECATED "")
+set(zeno_dial_VERSION "0.0.0")
+set(zeno_dial_BUILD_DEPENDS "rospy" "std_msgs")
+set(zeno_dial_RUN_DEPENDS "rospy" "std_msgs")
+set(zeno_dial_BUILDTOOL_DEPENDS "catkin")

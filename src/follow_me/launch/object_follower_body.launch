@@ -1,0 +1,3 @@
+<launch>
+	<node name="object_follower_body" pkg="follow_me" type="object_follower_body.py" />
+</launch>

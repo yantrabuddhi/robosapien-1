@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake;-GUnix Makefiles;/home/abeni/rob/build/tld_tracker/libopentld/src/opentld'

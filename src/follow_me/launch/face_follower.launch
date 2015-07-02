@@ -1,0 +1,3 @@
+<launch>
+	<node name="face_follower" pkg="follow_me" type="face_follower.py" />
+</launch>

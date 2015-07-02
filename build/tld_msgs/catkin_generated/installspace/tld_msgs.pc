@@ -1,0 +1,8 @@
+prefix=/home/abeni/rob/install
+
+Name: tld_msgs
+Description: Description of tld_msgs
+Version: 0.0.0
+Cflags: -I/home/abeni/rob/install/include
+Libs: -L/home/abeni/rob/install/lib 
+Requires: 
