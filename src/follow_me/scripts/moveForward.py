@@ -23,8 +23,8 @@ def checkHeading():
     heading=getCompass()
     # rospy.loginfo("values   %f   %f",heading[0],heading[-1])
     divergence=heading[0]-heading[-1]
-    rospy.loginfo('Heading data  %f   %f  ',heading[0],heading[-1])
-    rospy.loginfo("this is the divergence %f",divergence)
+    # rospy.loginfo('Heading data  %f   %f  ',heading[0],heading[-1])
+    # rospy.loginfo("this is the divergence %f",divergence)
     if abs(divergence) < compassTolerance:
         # The heading is fine!
         return (True,divergence)   
@@ -34,20 +34,24 @@ def checkHeading():
 def turn_Body():
     # rospy.loginfo("turning body in some direction")
     # heading=getCompass()
-    
+    deviationFactor=2.0
     # drift=heading[0]-heading[-1]
     value=checkHeading()
     while not value[0]:
         # rospy.loginfo('heading= '+str(heading))
-        rospy.loginfo("working on turning on the body")
+        # rospy.loginfo("working on turning on the body")
         # rospy.loginfo('Heading data  %f   %f  ',heading[0],heading[-1])
         if value[1] < 0:
-            direction='turn left'
-        else:
             direction='turn right'
+        else:
+            direction='turn left'
 
-        robot_cmd_pub.publish(direction,100)
-        delay(3)
+        latch_time=abs(deviationFactor*value[1])
+        rospy.loginfo('this is the latch_time %f',latch_time)
+        latch_time=clamp(80,latch_time,200)
+        rospy.loginfo('this is the latch_time %f',latch_time)
+        robot_cmd_pub.publish(direction,latch_time)
+        delay(2)
         value=checkHeading()
         # heading=getCompass() 
         # drift=heading[0]-heading[-1]
@@ -58,11 +62,12 @@ def moveForward():
     while True:
         topic = rospy.get_param('~topic','/sense/robot/get_compass_deg')
         rospy.Subscriber(topic,compass,readCompass)
-        delay(1.5)   
-        rospy.loginfo("issue walkf forward command")
+           
+        # rospy.loginfo("issue walkf forward command")
+        robot_cmd_pub.publish('walk forward',250)
+        delay(3)
         robot_cmd_pub.publish('walk forward',150)
         delay(3)
-
         if not checkHeading()[0]:
             turn_Body()
         else:   
