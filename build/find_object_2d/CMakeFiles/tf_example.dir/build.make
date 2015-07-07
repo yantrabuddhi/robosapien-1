@@ -170,6 +170,20 @@ tf_example_EXTERNAL_OBJECTS =
 /home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libboost_thread.so
 /home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_nonfree.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
+/home/abeni/rob/devel/lib/find_object_2d/tf_example: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
 /home/abeni/rob/devel/lib/find_object_2d/tf_example: find_object_2d/CMakeFiles/tf_example.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/abeni/rob/devel/lib/find_object_2d/tf_example"
 	cd /home/abeni/rob/build/find_object_2d && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tf_example.dir/link.txt --verbose=$(VERBOSE)

@@ -2,7 +2,7 @@
     <node pkg="cv_camera" type="cv_camera_node" name="cv_camera" output="screen">
         <param name="flip_image" value="false" />
         <param name="device_id" value="0" />
-        <param name="image_width" value="720" />
+        <param name="image_width" value="640" />
         <param name="image_height" value="480" />
         <param name="video standard" value="NTSC" />
         
