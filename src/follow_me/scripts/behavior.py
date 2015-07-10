@@ -56,7 +56,7 @@ class behavior:
                 #record heading degrees right after the end of camera tracking
                 self.blackboard["bodyPose"].append(self.blackboard["angles"]["pan"][-1]-45)
                 self.blackboard["HeadingAfterCT"].append(self.getCompass()[-1])
-                # Camera Track done!
+                #Camera Track done!
                 #rospy.loginfo("Done with CT")
                 yield True
             else:
@@ -104,13 +104,14 @@ class behavior:
     def reintialize(self):
         self.blackboard["angles"] = {"pan" :[45], "tilt" :[45]}
         self.blackboard["sonar_data"] = {"distance" : [200]}
-        self.blackboard["compass_data"]={"heading":[0]}
+        self.blackboard["compass_data"]={"heading":[]}
         self.blackboard["bodyPose"]=[]
+        self.blackboard["HeadingAfterCT"]=[]
     def CT(self):
         self.pan_head(self.blackboard["angles"]["pan"][-1])
-        delay(1.2)
+        delay(0.3)
         self.pan_head(self.blackboard["angles"]["pan"][-1])
-        delay(1.2)
+        delay(0.3)
 
     def pan_head(self,angle):    
         if not rospy.is_shutdown():
