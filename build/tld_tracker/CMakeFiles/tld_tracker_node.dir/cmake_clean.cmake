@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/tld_tracker_node.dir/src/tld_tracker_node.cpp.o"
   "CMakeFiles/tld_tracker_node.dir/src/main.cpp.o"
   "/home/abeni/rob/devel/lib/tld_tracker/tld_tracker_node.pdb"
@@ -6,6 +6,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/tld_tracker_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/tld_tracker_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

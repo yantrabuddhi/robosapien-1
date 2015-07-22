@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/robot_generate_messages_py"
   "/home/abeni/rob/devel/lib/python2.7/dist-packages/robot/msg/_sonar.py"
   "/home/abeni/rob/devel/lib/python2.7/dist-packages/robot/msg/_robot_cmd.py"
@@ -7,6 +7,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang)
-  INCLUDE(CMakeFiles/robot_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang)
+  include(CMakeFiles/robot_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

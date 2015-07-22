@@ -2,11 +2,10 @@
 
 message(STATUS "robot: 3 messages, 0 services")
 
-set(MSG_I_FLAGS "-Irobot:/home/abeni/rob/src/robot/msg;-Istd_msgs:/opt/ros/jade/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Irobot:/home/abeni/rob/src/robot/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
-find_package(geneus REQUIRED)
 find_package(genlisp REQUIRED)
 find_package(genpy REQUIRED)
 
@@ -32,7 +31,7 @@ add_custom_target(_robot_generate_messages_check_deps_${_filename}
 )
 
 #
-#  langs = gencpp;geneus;genlisp;genpy
+#  langs = gencpp;genlisp;genpy
 #
 
 ### Section generating for lang: gencpp
@@ -40,7 +39,7 @@ add_custom_target(_robot_generate_messages_check_deps_${_filename}
 _generate_msg_cpp(robot
   "/home/abeni/rob/src/robot/msg/sonar.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/robot
 )
 _generate_msg_cpp(robot
@@ -52,7 +51,7 @@ _generate_msg_cpp(robot
 _generate_msg_cpp(robot
   "/home/abeni/rob/src/robot/msg/compass.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/robot
 )
 
@@ -84,61 +83,12 @@ add_dependencies(robot_gencpp robot_generate_messages_cpp)
 # register target for catkin_package(EXPORTED_TARGETS)
 list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS robot_generate_messages_cpp)
 
-### Section generating for lang: geneus
-### Generating Messages
-_generate_msg_eus(robot
-  "/home/abeni/rob/src/robot/msg/sonar.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/robot
-)
-_generate_msg_eus(robot
-  "/home/abeni/rob/src/robot/msg/robot_cmd.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/robot
-)
-_generate_msg_eus(robot
-  "/home/abeni/rob/src/robot/msg/compass.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/robot
-)
-
-### Generating Services
-
-### Generating Module File
-_generate_module_eus(robot
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/robot
-  "${ALL_GEN_OUTPUT_FILES_eus}"
-)
-
-add_custom_target(robot_generate_messages_eus
-  DEPENDS ${ALL_GEN_OUTPUT_FILES_eus}
-)
-add_dependencies(robot_generate_messages robot_generate_messages_eus)
-
-# add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/abeni/rob/src/robot/msg/sonar.msg" NAME_WE)
-add_dependencies(robot_generate_messages_eus _robot_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/abeni/rob/src/robot/msg/robot_cmd.msg" NAME_WE)
-add_dependencies(robot_generate_messages_eus _robot_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/abeni/rob/src/robot/msg/compass.msg" NAME_WE)
-add_dependencies(robot_generate_messages_eus _robot_generate_messages_check_deps_${_filename})
-
-# target for backward compatibility
-add_custom_target(robot_geneus)
-add_dependencies(robot_geneus robot_generate_messages_eus)
-
-# register target for catkin_package(EXPORTED_TARGETS)
-list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS robot_generate_messages_eus)
-
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(robot
   "/home/abeni/rob/src/robot/msg/sonar.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/robot
 )
 _generate_msg_lisp(robot
@@ -150,7 +100,7 @@ _generate_msg_lisp(robot
 _generate_msg_lisp(robot
   "/home/abeni/rob/src/robot/msg/compass.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/robot
 )
 
@@ -187,7 +137,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS robot_generate_messages_lisp)
 _generate_msg_py(robot
   "/home/abeni/rob/src/robot/msg/sonar.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/robot
 )
 _generate_msg_py(robot
@@ -199,7 +149,7 @@ _generate_msg_py(robot
 _generate_msg_py(robot
   "/home/abeni/rob/src/robot/msg/compass.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/robot
 )
 
@@ -241,15 +191,6 @@ if(gencpp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ro
   )
 endif()
 add_dependencies(robot_generate_messages_cpp std_msgs_generate_messages_cpp)
-
-if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/robot)
-  # install generated code
-  install(
-    DIRECTORY ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/robot
-    DESTINATION ${geneus_INSTALL_DIR}
-  )
-endif()
-add_dependencies(robot_generate_messages_eus std_msgs_generate_messages_eus)
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/robot)
   # install generated code

@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/abeni/rob/devel/lib;/opt/ros/jade/lib)
+    foreach(path /home/abeni/rob/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -145,7 +145,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(robot_EXPORTED_TARGETS "robot_generate_messages_cpp;robot_generate_messages_eus;robot_generate_messages_lisp;robot_generate_messages_py")
+set(robot_EXPORTED_TARGETS "robot_generate_messages_cpp;robot_generate_messages_lisp;robot_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${robot_EXPORTED_TARGETS})
   if(NOT TARGET ${t})

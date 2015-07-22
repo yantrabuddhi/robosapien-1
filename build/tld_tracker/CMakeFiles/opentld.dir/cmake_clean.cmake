@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/opentld"
   "CMakeFiles/opentld-complete"
   "libopentld/src/opentld-stamp/opentld-install"
@@ -11,6 +11,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang)
-  INCLUDE(CMakeFiles/opentld.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang)
+  include(CMakeFiles/opentld.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

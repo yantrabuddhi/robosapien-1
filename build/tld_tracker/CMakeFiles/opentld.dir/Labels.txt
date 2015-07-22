@@ -1,0 +1,13 @@
+# Target labels
+ opentld
+# Source files and their labels
+/home/abeni/rob/build/tld_tracker/CMakeFiles/opentld
+/home/abeni/rob/build/tld_tracker/CMakeFiles/opentld.rule
+/home/abeni/rob/build/tld_tracker/CMakeFiles/opentld-complete.rule
+/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-install.rule
+/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-mkdir.rule
+/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-download.rule
+/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-update.rule
+/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-patch.rule
+/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-configure.rule
+/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-build.rule

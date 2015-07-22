@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "src/moc_base_frame.cxx"
   "src/moc_ui_baseFrame.cxx"
   "src/moc_base_frame_graphics_view.cxx"
@@ -13,6 +13,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/tld_gui_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/tld_gui_node.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

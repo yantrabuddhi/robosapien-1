@@ -434,6 +434,12 @@ QT_QMNG_PLUGIN_DEBUG:FILEPATH=QT_QMNG_PLUGIN_DEBUG-NOTFOUND
 QT_QMNG_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/imageformats/libqmng.so
 
 //Path to a library.
+QT_QNATIVEWIFIBEARER_PLUGIN_DEBUG:FILEPATH=QT_QNATIVEWIFIBEARER_PLUGIN_DEBUG-NOTFOUND
+
+//Path to a library.
+QT_QNATIVEWIFIBEARER_PLUGIN_RELEASE:FILEPATH=QT_QNATIVEWIFIBEARER_PLUGIN_RELEASE-NOTFOUND
+
+//Path to a library.
 QT_QSQLDB2_PLUGIN_DEBUG:FILEPATH=QT_QSQLDB2_PLUGIN_DEBUG-NOTFOUND
 
 //Path to a library.
@@ -621,6 +627,12 @@ QT_QTDESIGNER_LIBRARY_DEBUG:FILEPATH=QT_QTDESIGNER_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
 QT_QTDESIGNER_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtDesigner.so
+
+//Path to a library.
+QT_QTGA_PLUGIN_DEBUG:FILEPATH=QT_QTGA_PLUGIN_DEBUG-NOTFOUND
+
+//Path to a library.
+QT_QTGA_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/imageformats/libqtga.so
 
 //Path to a file.
 QT_QTGUI_INCLUDE_DIR:PATH=/usr/include/qt4/QtGui
@@ -899,46 +911,52 @@ _CATKIN_GTEST_SRC:FILEPATH=/usr/src/gtest/src/gtest.cc
 _file_name:FILEPATH=/home/abeni/rob/src/cv_camera/test/no_yaml.test
 
 //The directory containing a CMake configuration file for actionlib.
-actionlib_DIR:PATH=/opt/ros/jade/share/actionlib/cmake
+actionlib_DIR:PATH=/opt/ros/indigo/share/actionlib/cmake
 
 //The directory containing a CMake configuration file for actionlib_msgs.
-actionlib_msgs_DIR:PATH=/opt/ros/jade/share/actionlib_msgs/cmake
+actionlib_msgs_DIR:PATH=/opt/ros/indigo/share/actionlib_msgs/cmake
+
+//Value Computed by CMake
+ball_tracker_BINARY_DIR:STATIC=/home/abeni/rob/build/ball_tracker
+
+//Value Computed by CMake
+ball_tracker_SOURCE_DIR:STATIC=/home/abeni/rob/src/ball_tracker
 
 //The directory containing a CMake configuration file for bond.
-bond_DIR:PATH=/opt/ros/jade/share/bond/cmake
+bond_DIR:PATH=/opt/ros/indigo/share/bond/cmake
 
 //The directory containing a CMake configuration file for bondcpp.
-bondcpp_DIR:PATH=/opt/ros/jade/share/bondcpp/cmake
+bondcpp_DIR:PATH=/opt/ros/indigo/share/bondcpp/cmake
 
 //The directory containing a CMake configuration file for camera_info_manager.
-camera_info_manager_DIR:PATH=/opt/ros/jade/share/camera_info_manager/cmake
+camera_info_manager_DIR:PATH=/opt/ros/indigo/share/camera_info_manager/cmake
 
 //The directory containing a CMake configuration file for catkin.
-catkin_DIR:PATH=/opt/ros/jade/share/catkin/cmake
+catkin_DIR:PATH=/opt/ros/indigo/share/catkin/cmake
 
 //The directory containing a CMake configuration file for class_loader.
-class_loader_DIR:PATH=/opt/ros/jade/share/class_loader/cmake
+class_loader_DIR:PATH=/opt/ros/indigo/share/class_loader/cmake
 
 //The directory containing a CMake configuration file for cpp_common.
-cpp_common_DIR:PATH=/opt/ros/jade/share/cpp_common/cmake
+cpp_common_DIR:PATH=/opt/ros/indigo/share/cpp_common/cmake
 
 //The directory containing a CMake configuration file for cv_bridge.
-cv_bridge_DIR:PATH=/opt/ros/jade/share/cv_bridge/cmake
+cv_bridge_DIR:PATH=/opt/ros/indigo/share/cv_bridge/cmake
 
 //Value Computed by CMake
 cv_camera_BINARY_DIR:STATIC=/home/abeni/rob/build/cv_camera
 
 //Dependencies for the target
-cv_camera_LIB_DEPENDS:STATIC=general;/opt/ros/jade/lib/libimage_transport.so;general;/opt/ros/jade/lib/libmessage_filters.so;general;/opt/ros/jade/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8;general;/opt/ros/jade/lib/libnodeletlib.so;general;/opt/ros/jade/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/jade/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/jade/lib/libroslib.so;general;/opt/ros/jade/lib/libcamera_info_manager.so;general;/opt/ros/jade/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/jade/lib/librosconsole.so;general;/opt/ros/jade/lib/librosconsole_log4cxx.so;general;/opt/ros/jade/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/jade/lib/libxmlrpcpp.so;general;/opt/ros/jade/lib/libroscpp_serialization.so;general;/opt/ros/jade/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/opt/ros/jade/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;opencv_videostab;general;opencv_video;general;opencv_superres;general;opencv_stitching;general;opencv_photo;general;opencv_ocl;general;opencv_objdetect;general;opencv_nonfree;general;opencv_ml;general;opencv_legacy;general;opencv_imgproc;general;opencv_highgui;general;opencv_gpu;general;opencv_flann;general;opencv_features2d;general;opencv_core;general;opencv_contrib;general;opencv_calib3d;
+cv_camera_LIB_DEPENDS:STATIC=general;/opt/ros/indigo/lib/libimage_transport.so;general;/opt/ros/indigo/lib/libmessage_filters.so;general;/opt/ros/indigo/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8;general;/opt/ros/indigo/lib/libnodeletlib.so;general;/opt/ros/indigo/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/indigo/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/indigo/lib/libroslib.so;general;/opt/ros/indigo/lib/libcamera_info_manager.so;general;/opt/ros/indigo/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/indigo/lib/librosconsole.so;general;/opt/ros/indigo/lib/librosconsole_log4cxx.so;general;/opt/ros/indigo/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/indigo/lib/libxmlrpcpp.so;general;/opt/ros/indigo/lib/libroscpp_serialization.so;general;/opt/ros/indigo/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/opt/ros/indigo/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;opencv_videostab;general;opencv_video;general;opencv_superres;general;opencv_stitching;general;opencv_photo;general;opencv_ocl;general;opencv_objdetect;general;opencv_nonfree;general;opencv_ml;general;opencv_legacy;general;opencv_imgproc;general;opencv_highgui;general;opencv_gpu;general;opencv_flann;general;opencv_features2d;general;opencv_core;general;opencv_contrib;general;opencv_calib3d;
 
 //Value Computed by CMake
 cv_camera_SOURCE_DIR:STATIC=/home/abeni/rob/src/cv_camera
 
 //Dependencies for the target
-cv_camera_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/jade/lib/libimage_transport.so;general;/opt/ros/jade/lib/libmessage_filters.so;general;/opt/ros/jade/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8;general;/opt/ros/jade/lib/libnodeletlib.so;general;/opt/ros/jade/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/jade/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/jade/lib/libroslib.so;general;/opt/ros/jade/lib/libcamera_info_manager.so;general;/opt/ros/jade/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/jade/lib/librosconsole.so;general;/opt/ros/jade/lib/librosconsole_log4cxx.so;general;/opt/ros/jade/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/jade/lib/libxmlrpcpp.so;general;/opt/ros/jade/lib/libroscpp_serialization.so;general;/opt/ros/jade/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/opt/ros/jade/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;cv_camera;
+cv_camera_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/indigo/lib/libimage_transport.so;general;/opt/ros/indigo/lib/libmessage_filters.so;general;/opt/ros/indigo/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8;general;/opt/ros/indigo/lib/libnodeletlib.so;general;/opt/ros/indigo/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/indigo/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/indigo/lib/libroslib.so;general;/opt/ros/indigo/lib/libcamera_info_manager.so;general;/opt/ros/indigo/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/indigo/lib/librosconsole.so;general;/opt/ros/indigo/lib/librosconsole_log4cxx.so;general;/opt/ros/indigo/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/indigo/lib/libxmlrpcpp.so;general;/opt/ros/indigo/lib/libroscpp_serialization.so;general;/opt/ros/indigo/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/opt/ros/indigo/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;cv_camera;
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
-dynamic_reconfigure_DIR:PATH=/opt/ros/jade/share/dynamic_reconfigure/cmake
+dynamic_reconfigure_DIR:PATH=/opt/ros/indigo/share/dynamic_reconfigure/cmake
 
 //Value Computed by CMake
 find_object_2d_BINARY_DIR:STATIC=/home/abeni/rob/build/find_object_2d
@@ -953,22 +971,22 @@ follow_me_BINARY_DIR:STATIC=/home/abeni/rob/build/follow_me
 follow_me_SOURCE_DIR:STATIC=/home/abeni/rob/src/follow_me
 
 //The directory containing a CMake configuration file for gencpp.
-gencpp_DIR:PATH=/opt/ros/jade/share/gencpp/cmake
+gencpp_DIR:PATH=/opt/ros/indigo/share/gencpp/cmake
 
 //The directory containing a CMake configuration file for geneus.
 geneus_DIR:PATH=/opt/ros/jade/share/geneus/cmake
 
 //The directory containing a CMake configuration file for genlisp.
-genlisp_DIR:PATH=/opt/ros/jade/share/genlisp/cmake
+genlisp_DIR:PATH=/opt/ros/indigo/share/genlisp/cmake
 
 //The directory containing a CMake configuration file for genmsg.
-genmsg_DIR:PATH=/opt/ros/jade/share/genmsg/cmake
+genmsg_DIR:PATH=/opt/ros/indigo/share/genmsg/cmake
 
 //The directory containing a CMake configuration file for genpy.
-genpy_DIR:PATH=/opt/ros/jade/share/genpy/cmake
+genpy_DIR:PATH=/opt/ros/indigo/share/genpy/cmake
 
 //The directory containing a CMake configuration file for geometry_msgs.
-geometry_msgs_DIR:PATH=/opt/ros/jade/share/geometry_msgs/cmake
+geometry_msgs_DIR:PATH=/opt/ros/indigo/share/geometry_msgs/cmake
 
 //Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/home/abeni/rob/build/gtest
@@ -996,7 +1014,7 @@ gtest_force_shared_crt:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
 //The directory containing a CMake configuration file for image_transport.
-image_transport_DIR:PATH=/opt/ros/jade/share/image_transport/cmake
+image_transport_DIR:PATH=/opt/ros/indigo/share/image_transport/cmake
 
 //Value Computed by CMake
 launcher_BINARY_DIR:STATIC=/home/abeni/rob/build/launcher
@@ -1005,19 +1023,19 @@ launcher_BINARY_DIR:STATIC=/home/abeni/rob/build/launcher
 launcher_SOURCE_DIR:STATIC=/home/abeni/rob/src/launcher
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/jade/lib/librostime.so
+lib:FILEPATH=/opt/ros/indigo/lib/librostime.so
 
 //The directory containing a CMake configuration file for message_filters.
-message_filters_DIR:PATH=/opt/ros/jade/share/message_filters/cmake
+message_filters_DIR:PATH=/opt/ros/indigo/share/message_filters/cmake
 
 //The directory containing a CMake configuration file for message_generation.
-message_generation_DIR:PATH=/opt/ros/jade/share/message_generation/cmake
+message_generation_DIR:PATH=/opt/ros/indigo/share/message_generation/cmake
 
 //The directory containing a CMake configuration file for message_runtime.
-message_runtime_DIR:PATH=/opt/ros/jade/share/message_runtime/cmake
+message_runtime_DIR:PATH=/opt/ros/indigo/share/message_runtime/cmake
 
 //The directory containing a CMake configuration file for nodelet.
-nodelet_DIR:PATH=/opt/ros/jade/share/nodelet/cmake
+nodelet_DIR:PATH=/opt/ros/indigo/share/nodelet/cmake
 
 //Value Computed by CMake
 owyl_behavior_BINARY_DIR:STATIC=/home/abeni/rob/build/owyl_behavior
@@ -1026,16 +1044,16 @@ owyl_behavior_BINARY_DIR:STATIC=/home/abeni/rob/build/owyl_behavior
 owyl_behavior_SOURCE_DIR:STATIC=/home/abeni/rob/src/owyl_behavior
 
 //The directory containing a CMake configuration file for pcl_conversions.
-pcl_conversions_DIR:PATH=/opt/ros/jade/share/pcl_conversions/cmake
+pcl_conversions_DIR:PATH=/opt/ros/indigo/share/pcl_conversions/cmake
 
 //The directory containing a CMake configuration file for pcl_msgs.
-pcl_msgs_DIR:PATH=/opt/ros/jade/share/pcl_msgs/cmake
+pcl_msgs_DIR:PATH=/opt/ros/indigo/share/pcl_msgs/cmake
 
 //The directory containing a CMake configuration file for pcl_ros.
-pcl_ros_DIR:PATH=/opt/ros/jade/share/pcl_ros/cmake
+pcl_ros_DIR:PATH=/opt/ros/indigo/share/pcl_ros/cmake
 
 //The directory containing a CMake configuration file for pluginlib.
-pluginlib_DIR:PATH=/opt/ros/jade/share/pluginlib/cmake
+pluginlib_DIR:PATH=/opt/ros/indigo/share/pluginlib/cmake
 
 //Value Computed by CMake
 robot_BINARY_DIR:STATIC=/home/abeni/rob/build/robot
@@ -1044,67 +1062,67 @@ robot_BINARY_DIR:STATIC=/home/abeni/rob/build/robot
 robot_SOURCE_DIR:STATIC=/home/abeni/rob/src/robot
 
 //The directory containing a CMake configuration file for rosbag.
-rosbag_DIR:PATH=/opt/ros/jade/share/rosbag/cmake
+rosbag_DIR:PATH=/opt/ros/indigo/share/rosbag/cmake
 
 //The directory containing a CMake configuration file for rosbag_storage.
-rosbag_storage_DIR:PATH=/opt/ros/jade/share/rosbag_storage/cmake
+rosbag_storage_DIR:PATH=/opt/ros/indigo/share/rosbag_storage/cmake
 
 //The directory containing a CMake configuration file for rosconsole.
-rosconsole_DIR:PATH=/opt/ros/jade/share/rosconsole/cmake
+rosconsole_DIR:PATH=/opt/ros/indigo/share/rosconsole/cmake
 
 //The directory containing a CMake configuration file for roscpp.
-roscpp_DIR:PATH=/opt/ros/jade/share/roscpp/cmake
+roscpp_DIR:PATH=/opt/ros/indigo/share/roscpp/cmake
 
 //The directory containing a CMake configuration file for roscpp_serialization.
-roscpp_serialization_DIR:PATH=/opt/ros/jade/share/roscpp_serialization/cmake
+roscpp_serialization_DIR:PATH=/opt/ros/indigo/share/roscpp_serialization/cmake
 
 //The directory containing a CMake configuration file for roscpp_traits.
-roscpp_traits_DIR:PATH=/opt/ros/jade/share/roscpp_traits/cmake
+roscpp_traits_DIR:PATH=/opt/ros/indigo/share/roscpp_traits/cmake
 
 //The directory containing a CMake configuration file for rosgraph.
-rosgraph_DIR:PATH=/opt/ros/jade/share/rosgraph/cmake
+rosgraph_DIR:PATH=/opt/ros/indigo/share/rosgraph/cmake
 
 //The directory containing a CMake configuration file for rosgraph_msgs.
-rosgraph_msgs_DIR:PATH=/opt/ros/jade/share/rosgraph_msgs/cmake
+rosgraph_msgs_DIR:PATH=/opt/ros/indigo/share/rosgraph_msgs/cmake
 
 //The directory containing a CMake configuration file for roslib.
-roslib_DIR:PATH=/opt/ros/jade/share/roslib/cmake
+roslib_DIR:PATH=/opt/ros/indigo/share/roslib/cmake
 
 //The directory containing a CMake configuration file for roslz4.
-roslz4_DIR:PATH=/opt/ros/jade/share/roslz4/cmake
+roslz4_DIR:PATH=/opt/ros/indigo/share/roslz4/cmake
 
 //The directory containing a CMake configuration file for rospy.
-rospy_DIR:PATH=/opt/ros/jade/share/rospy/cmake
+rospy_DIR:PATH=/opt/ros/indigo/share/rospy/cmake
 
 //The directory containing a CMake configuration file for rostest.
-rostest_DIR:PATH=/opt/ros/jade/share/rostest/cmake
+rostest_DIR:PATH=/opt/ros/indigo/share/rostest/cmake
 
 //The directory containing a CMake configuration file for rostime.
-rostime_DIR:PATH=/opt/ros/jade/share/rostime/cmake
+rostime_DIR:PATH=/opt/ros/indigo/share/rostime/cmake
 
 //The directory containing a CMake configuration file for sensor_msgs.
-sensor_msgs_DIR:PATH=/opt/ros/jade/share/sensor_msgs/cmake
+sensor_msgs_DIR:PATH=/opt/ros/indigo/share/sensor_msgs/cmake
 
 //The directory containing a CMake configuration file for smclib.
-smclib_DIR:PATH=/opt/ros/jade/share/smclib/cmake
+smclib_DIR:PATH=/opt/ros/indigo/share/smclib/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
-std_msgs_DIR:PATH=/opt/ros/jade/share/std_msgs/cmake
+std_msgs_DIR:PATH=/opt/ros/indigo/share/std_msgs/cmake
 
 //The directory containing a CMake configuration file for tf2.
-tf2_DIR:PATH=/opt/ros/jade/share/tf2/cmake
+tf2_DIR:PATH=/opt/ros/indigo/share/tf2/cmake
 
 //The directory containing a CMake configuration file for tf2_msgs.
-tf2_msgs_DIR:PATH=/opt/ros/jade/share/tf2_msgs/cmake
+tf2_msgs_DIR:PATH=/opt/ros/indigo/share/tf2_msgs/cmake
 
 //The directory containing a CMake configuration file for tf2_py.
-tf2_py_DIR:PATH=/opt/ros/jade/share/tf2_py/cmake
+tf2_py_DIR:PATH=/opt/ros/indigo/share/tf2_py/cmake
 
 //The directory containing a CMake configuration file for tf2_ros.
-tf2_ros_DIR:PATH=/opt/ros/jade/share/tf2_ros/cmake
+tf2_ros_DIR:PATH=/opt/ros/indigo/share/tf2_ros/cmake
 
 //The directory containing a CMake configuration file for tf.
-tf_DIR:PATH=/opt/ros/jade/share/tf/cmake
+tf_DIR:PATH=/opt/ros/indigo/share/tf/cmake
 
 //Value Computed by CMake
 tld_msgs_BINARY_DIR:STATIC=/home/abeni/rob/build/tld_msgs
@@ -1122,7 +1140,7 @@ tld_tracker_BINARY_DIR:STATIC=/home/abeni/rob/build/tld_tracker
 tld_tracker_SOURCE_DIR:STATIC=/home/abeni/rob/src/tld_tracker
 
 //The directory containing a CMake configuration file for topic_tools.
-topic_tools_DIR:PATH=/opt/ros/jade/share/topic_tools/cmake
+topic_tools_DIR:PATH=/opt/ros/indigo/share/topic_tools/cmake
 
 //Value Computed by CMake
 vision_BINARY_DIR:STATIC=/home/abeni/rob/build/vision
@@ -1131,7 +1149,7 @@ vision_BINARY_DIR:STATIC=/home/abeni/rob/build/vision
 vision_SOURCE_DIR:STATIC=/home/abeni/rob/src/vision
 
 //The directory containing a CMake configuration file for xmlrpcpp.
-xmlrpcpp_DIR:PATH=/opt/ros/jade/share/xmlrpcpp/cmake
+xmlrpcpp_DIR:PATH=/opt/ros/indigo/share/xmlrpcpp/cmake
 
 //Value Computed by CMake
 zeno_dial_BINARY_DIR:STATIC=/home/abeni/rob/build/zeno_dial
@@ -1163,18 +1181,16 @@ CATKIN_ENV:INTERNAL=/home/abeni/rob/build/catkin_generated/env_cached.sh
 CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/abeni/rob/build/test_results
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_BUILD_TOOL
-CMAKE_BUILD_TOOL-ADVANCED:INTERNAL=1
 //What is the target build tool cmake is generating for.
 CMAKE_BUILD_TOOL:INTERNAL=/usr/bin/make
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/home/abeni/rob/build
 //Major version of cmake used to create the current loaded cache
-CMAKE_CACHE_MAJOR_VERSION:INTERNAL=2
+CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=8
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=2
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=12
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=2
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -1223,6 +1239,8 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of generator.
 CMAKE_GENERATOR:INTERNAL=Unix Makefiles
+//Name of generator platform.
+CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Have symbol pthread_create
@@ -1255,7 +1273,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=12
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=13
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1263,7 +1281,7 @@ CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_RANLIB
 CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/usr/share/cmake-2.8
+CMAKE_ROOT:INTERNAL=/usr/share/cmake-3.2
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
@@ -1441,10 +1459,15 @@ QT_QJPEG_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
 QT_QKRCODECS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QKRCODECS_PLUGIN_RELEASE
 QT_QKRCODECS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
+QT_QMAKE_EXECUTABLE_LAST:INTERNAL=/usr/bin/qmake
 //ADVANCED property for variable: QT_QMNG_PLUGIN_DEBUG
 QT_QMNG_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QMNG_PLUGIN_RELEASE
 QT_QMNG_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: QT_QNATIVEWIFIBEARER_PLUGIN_DEBUG
+QT_QNATIVEWIFIBEARER_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: QT_QNATIVEWIFIBEARER_PLUGIN_RELEASE
+QT_QNATIVEWIFIBEARER_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QSQLDB2_PLUGIN_DEBUG
 QT_QSQLDB2_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QSQLDB2_PLUGIN_RELEASE
@@ -1571,6 +1594,10 @@ QT_QTDESIGNER_LIBRARY-ADVANCED:INTERNAL=1
 QT_QTDESIGNER_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QTDESIGNER_LIBRARY_RELEASE
 QT_QTDESIGNER_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: QT_QTGA_PLUGIN_DEBUG
+QT_QTGA_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: QT_QTGA_PLUGIN_RELEASE
+QT_QTGA_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QTGUI_INCLUDE_DIR
 QT_QTGUI_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QTGUI_LIBRARY
@@ -1755,6 +1782,8 @@ _Boost_COMPONENTS_SEARCHED:INTERNAL=system;thread
 _Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
 //Last used Boost_LIBRARY_DIR value.
 _Boost_LIBRARY_DIR_LAST:INTERNAL=/usr/lib/x86_64-linux-gnu
+//Last used Boost_NAMESPACE value.
+_Boost_NAMESPACE_LAST:INTERNAL=boost
 //Last used Boost_USE_MULTITHREADED value.
 _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
 

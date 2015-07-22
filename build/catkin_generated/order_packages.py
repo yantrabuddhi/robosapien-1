@@ -2,4 +2,4 @@
 source_root_dir = "/home/abeni/rob/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/opt/ros/jade".split(';') if "/opt/ros/jade" != "" else []
+underlay_workspaces = "/opt/ros/indigo".split(';') if "/opt/ros/indigo" != "" else []

@@ -2,11 +2,10 @@
 
 message(STATUS "vision: 2 messages, 0 services")
 
-set(MSG_I_FLAGS "-Ivision:/home/abeni/rob/src/vision/msg;-Istd_msgs:/opt/ros/jade/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/jade/share/geometry_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ivision:/home/abeni/rob/src/vision/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
-find_package(geneus REQUIRED)
 find_package(genlisp REQUIRED)
 find_package(genpy REQUIRED)
 
@@ -27,7 +26,7 @@ add_custom_target(_vision_generate_messages_check_deps_${_filename}
 )
 
 #
-#  langs = gencpp;geneus;genlisp;genpy
+#  langs = gencpp;genlisp;genpy
 #
 
 ### Section generating for lang: gencpp
@@ -35,13 +34,13 @@ add_custom_target(_vision_generate_messages_check_deps_${_filename}
 _generate_msg_cpp(vision
   "/home/abeni/rob/src/vision/msg/face_box.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/vision
 )
 _generate_msg_cpp(vision
   "/home/abeni/rob/src/vision/msg/targets.msg"
   "${MSG_I_FLAGS}"
-  "/home/abeni/rob/src/vision/msg/face_box.msg;/opt/ros/jade/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/abeni/rob/src/vision/msg/face_box.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/vision
 )
 
@@ -71,59 +70,18 @@ add_dependencies(vision_gencpp vision_generate_messages_cpp)
 # register target for catkin_package(EXPORTED_TARGETS)
 list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS vision_generate_messages_cpp)
 
-### Section generating for lang: geneus
-### Generating Messages
-_generate_msg_eus(vision
-  "/home/abeni/rob/src/vision/msg/face_box.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/geometry_msgs/cmake/../msg/Point.msg"
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vision
-)
-_generate_msg_eus(vision
-  "/home/abeni/rob/src/vision/msg/targets.msg"
-  "${MSG_I_FLAGS}"
-  "/home/abeni/rob/src/vision/msg/face_box.msg;/opt/ros/jade/share/geometry_msgs/cmake/../msg/Point.msg"
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vision
-)
-
-### Generating Services
-
-### Generating Module File
-_generate_module_eus(vision
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vision
-  "${ALL_GEN_OUTPUT_FILES_eus}"
-)
-
-add_custom_target(vision_generate_messages_eus
-  DEPENDS ${ALL_GEN_OUTPUT_FILES_eus}
-)
-add_dependencies(vision_generate_messages vision_generate_messages_eus)
-
-# add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/abeni/rob/src/vision/msg/face_box.msg" NAME_WE)
-add_dependencies(vision_generate_messages_eus _vision_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/abeni/rob/src/vision/msg/targets.msg" NAME_WE)
-add_dependencies(vision_generate_messages_eus _vision_generate_messages_check_deps_${_filename})
-
-# target for backward compatibility
-add_custom_target(vision_geneus)
-add_dependencies(vision_geneus vision_generate_messages_eus)
-
-# register target for catkin_package(EXPORTED_TARGETS)
-list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS vision_generate_messages_eus)
-
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(vision
   "/home/abeni/rob/src/vision/msg/face_box.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/vision
 )
 _generate_msg_lisp(vision
   "/home/abeni/rob/src/vision/msg/targets.msg"
   "${MSG_I_FLAGS}"
-  "/home/abeni/rob/src/vision/msg/face_box.msg;/opt/ros/jade/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/abeni/rob/src/vision/msg/face_box.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/vision
 )
 
@@ -158,13 +116,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS vision_generate_messages_lisp)
 _generate_msg_py(vision
   "/home/abeni/rob/src/vision/msg/face_box.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/jade/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/vision
 )
 _generate_msg_py(vision
   "/home/abeni/rob/src/vision/msg/targets.msg"
   "${MSG_I_FLAGS}"
-  "/home/abeni/rob/src/vision/msg/face_box.msg;/opt/ros/jade/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/abeni/rob/src/vision/msg/face_box.msg;/opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/vision
 )
 
@@ -205,16 +163,6 @@ if(gencpp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/vi
 endif()
 add_dependencies(vision_generate_messages_cpp std_msgs_generate_messages_cpp)
 add_dependencies(vision_generate_messages_cpp geometry_msgs_generate_messages_cpp)
-
-if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vision)
-  # install generated code
-  install(
-    DIRECTORY ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vision
-    DESTINATION ${geneus_INSTALL_DIR}
-  )
-endif()
-add_dependencies(vision_generate_messages_eus std_msgs_generate_messages_eus)
-add_dependencies(vision_generate_messages_eus geometry_msgs_generate_messages_eus)
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/vision)
   # install generated code

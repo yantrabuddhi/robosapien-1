@@ -1,12 +1,12 @@
 (cl:defpackage robot-msg
   (:use )
   (:export
-   "<COMPASS>"
-   "COMPASS"
-   "<SONAR>"
-   "SONAR"
    "<GESTURE_R>"
    "GESTURE_R"
+   "<SONAR>"
+   "SONAR"
+   "<COMPASS>"
+   "COMPASS"
    "<ROBOT_CMD>"
    "ROBOT_CMD"
   ))

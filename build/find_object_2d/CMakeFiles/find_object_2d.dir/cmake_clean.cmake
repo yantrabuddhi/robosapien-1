@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "include_x/find_object/moc_MainWindow.cxx"
   "include_x/find_object/moc_TcpServer.cxx"
   "include_x/find_object/moc_ObjWidget.cxx"
@@ -65,6 +65,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/find_object_2d.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/find_object_2d.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

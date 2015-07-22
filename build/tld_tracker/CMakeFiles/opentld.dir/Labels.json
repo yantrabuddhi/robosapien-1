@@ -1,0 +1,51 @@
+
+{
+	"sources" : 
+	[
+		
+		{
+			"file" : "/home/abeni/rob/build/tld_tracker/CMakeFiles/opentld"
+		},
+		
+		{
+			"file" : "/home/abeni/rob/build/tld_tracker/CMakeFiles/opentld.rule"
+		},
+		
+		{
+			"file" : "/home/abeni/rob/build/tld_tracker/CMakeFiles/opentld-complete.rule"
+		},
+		
+		{
+			"file" : "/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-install.rule"
+		},
+		
+		{
+			"file" : "/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-mkdir.rule"
+		},
+		
+		{
+			"file" : "/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-download.rule"
+		},
+		
+		{
+			"file" : "/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-update.rule"
+		},
+		
+		{
+			"file" : "/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-patch.rule"
+		},
+		
+		{
+			"file" : "/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-configure.rule"
+		},
+		
+		{
+			"file" : "/home/abeni/rob/build/tld_tracker/libopentld/src/opentld-stamp/opentld-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : [ "opentld" ],
+		"name" : "opentld"
+	}
+}

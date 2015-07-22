@@ -34,7 +34,7 @@ class behavior:
         # tree=owyl.repeatAlways(self.isCameraTrack())
         tree=owyl.repeatAlways(
                 owyl.sequence(
-                    owyl.selector(self.checkIfBall(),owyl.selector(self.search80(),self.search55(),search30(),self.turnBody()))
+                    owyl.selector(self.checkIfBall(),owyl.selector(self.search85(),self.search60(),self.search35(),self.turnBody()))
                     ,owyl.repeatUntilSucceed(self.isCameraTrack())
                     ,owyl.repeatUntilSucceed(self.isBodyTrack())
                     ,self.isWalkForward()
@@ -67,9 +67,9 @@ class behavior:
             self.reintialize()
             yield False
     @owyl.taskmethod
-    def search80(self,**kwargs):
+    def search85(self,**kwargs):
         # rospy.loginfo("at 80 search")
-        self.scanning_tilt=80
+        self.scanning_tilt=85
         self.pan_head(0)
         delay(1)
         self.tilt_head(self.scanning_tilt)
@@ -100,9 +100,9 @@ class behavior:
 
         
     @owyl.taskmethod
-    def search55(self,**kwargs):
+    def search60(self,**kwargs):
         rospy.loginfo("at 60 search")
-        self.scanning_tilt=55
+        self.scanning_tilt=60
         self.pan_head(0);
         delay(1)
         self.tilt_head(self.scanning_tilt);
@@ -131,9 +131,9 @@ class behavior:
             self.reintialize()
             yield False
     @owyl.taskmethod
-    def search30(self,**kwargs):
+    def search35(self,**kwargs):
         rospy.loginfo("at 60 search")
-        self.scanning_tilt=30
+        self.scanning_tilt=35
         self.pan_head(0);
         delay(1)
         self.tilt_head(self.scanning_tilt);
