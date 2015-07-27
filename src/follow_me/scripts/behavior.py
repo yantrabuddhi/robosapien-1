@@ -60,7 +60,7 @@ class behavior:
         tree=owyl.repeatAlways(
                 owyl.sequence(
                     owyl.selector(self.checkIfBall(),owyl.selector(self.search85(),self.search60(),self.search35(),self.turnBody()))
-                    ,owyl.repeatUntilSucceed(self.iscameraTrack())
+                    ,owyl.repeatUntilSucceed(self.cameraTrack())
                     ,self.isCameraTrackDone()
                     ,owyl.repeatUntilSucceed(self.isBodyTrack())
                     ,self.isWalkForward()
@@ -674,14 +674,14 @@ def readSonarDist(data):
     board["sonar_data"]["distance"].append(data.distance_cm)
 
 def readCompass(data):
-        '''
-        A call back function that reads and appends the compass reading in degree
+    '''
+    A call back function that reads and appends the compass reading in degree
 
-        Argus:
-            data =>  contains data.heading_deg > Digital compass reading in degree (reference Absolute North)
+    Argus:
+        data =>  contains data.heading_deg > Digital compass reading in degree (reference Absolute North)
 
-        returns:
-            None > just appends the reading to the dictionary board["compass_data"]["heading"]
+    returns:
+        None > just appends the reading to the dictionary board["compass_data"]["heading"]
     '''
     board["compass_data"]["heading"].append(data.heading_deg)
 
