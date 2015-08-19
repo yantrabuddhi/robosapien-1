@@ -3,6 +3,7 @@ import owyl
 from owyl import blackboard
 import rospy
 import numpy as np
+import time
 from utils import clamp, waitForBT,delay
 from std_msgs.msg import String
 from std_msgs.msg import Int32
@@ -12,10 +13,11 @@ from robot.msg import compass
 from geometry_msgs.msg import Point
 
 
+
 class behavior:
     def __init__(self,bb):
         self.blackboard=bb#blackboard.Blackboard("behavior")
-        #rospy.loginfo (self.blackboard["stt"])
+        ##rospy.loginfo (self.blackboard["stt"])
         self.main_tree=self.create_main_tree()
        
         self.Error2=5
@@ -127,7 +129,7 @@ class behavior:
                     Smaller value > good for speed.    
         '''
 
-        # rospy.loginfo("checking if ball exists")
+        # #rospy.loginfo("checking if ball exists")
         delay(2)
         if len(self.blackboard["angles"]["pan"])>30:
             # ball is already detected. Jump to camera mode
@@ -159,7 +161,7 @@ class behavior:
                     change when the robot would consider a ball is spotted. Higher value means large noise reduction
                     but more delay time (or failure to spot the ball)
         '''
-        # rospy.loginfo("at 80 search")
+        # #rospy.loginfo("at 80 search")
         self.scanning_tilt=85            # Here you can change the tilt angle
         self.pan_head(0)
         delay(1)
@@ -172,21 +174,23 @@ class behavior:
             # check if a ball was spotted every multiple of 10 degree angle
             if i%10==0:
                 self.currentPanLen=len(self.blackboard["angles"]["pan"])
-                # rospy.loginfo("current  %f ,  prev  %f",self.currentPanLen,self.prevPanLen)
+                # #rospy.loginfo("current  %f ,  prev  %f",self.currentPanLen,self.prevPanLen)
                 if self.currentPanLen > self.prevPanLen+10:  # Here you can change the constant for optimization
                     # a ball was spotted (pan angle has been appended by the call back function)
                     # so break the loop and yield True
                     break
         
         if i <= 85:
-            rospy.loginfo("got it")
-            # rospy.loginfo("before current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
+            # #rospy.loginfo("got it")
+            # #rospy.loginfo("before current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
             self.blackboard["angles"]["pan"]=[i]
             self.blackboard["angles"]["tilt"]=[self.scanning_tilt]
-            # rospy.loginfo("After current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
+            # #rospy.loginfo("After current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
             yield True
         else:
+
             self.reintialize()
+            self.blackboard["angles"]["pan"]=[90]
             yield False
 
         
@@ -212,31 +216,33 @@ class behavior:
                     change when the robot would consider a ball is spotted. Higher value means large noise reduction
                     but more delay time (or failure to spot the ball)
         '''
-        rospy.loginfo("at 60 search")
+        # #rospy.loginfo("at 60 search")
         self.scanning_tilt=60
-        self.pan_head(0);
+        # self.pan_head(0);
         delay(1)
         self.tilt_head(self.scanning_tilt);
         delay(1)
         # Next turn the body smoothly from right to left at a step of 5 degrees for a total of 90 degrees
-        for i in range (10,95,10):
+        ii=range(0,95,10)
+        ii.reverse()
+        for i in ii:
             self.pan_head(i)
             delay(0.5)
             # check if a ball was spotted every 10 multiple degree angle
             if i%10==0:
                 self.currentPanLen=len(self.blackboard["angles"]["pan"])
-                # rospy.loginfo("current  %f ,  prev  %f",self.currentPanLen,self.prevPanLen)
+                # #rospy.loginfo("current  %f ,  prev  %f",self.currentPanLen,self.prevPanLen)
                 if self.currentPanLen > self.prevPanLen+10:
                     # a ball was spotted (pan angle has been appended by the call back function)
                     # so break the loop and yield True
                     break
         
-        if i <= 85:
-            # rospy.loginfo("got it")
-            # rospy.loginfo("before current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
+        if i >=5:
+            # #rospy.loginfo("got it")
+            # #rospy.loginfo("before current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
             self.blackboard["angles"]["pan"]=[i]
             self.blackboard["angles"]["tilt"]=[self.scanning_tilt]
-            # rospy.loginfo("After current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
+            # #rospy.loginfo("After current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
             yield True
         else:
             self.reintialize()
@@ -265,7 +271,7 @@ class behavior:
                     change when the robot would consider a ball is spotted. Higher value means large noise reduction
                     but more delay time (or failure to spot the ball)
         '''
-        # rospy.loginfo("at 35 search")
+        # #rospy.loginfo("at 35 search")
         self.scanning_tilt=35
         self.pan_head(0);
         delay(1)
@@ -278,18 +284,18 @@ class behavior:
             # check if a ball was spotted every 10 multiple degree angle
             if i%10==0:
                 self.currentPanLen=len(self.blackboard["angles"]["pan"])
-                # rospy.loginfo("current  %f ,  prev  %f",self.currentPanLen,self.prevPanLen)
+                # #rospy.loginfo("current  %f ,  prev  %f",self.currentPanLen,self.prevPanLen)
                 if self.currentPanLen > self.prevPanLen+10:
                     # a ball was spotted (pan angle has been appended by the call back function)
                     # so break the loop and yield True
                     break
         
         if i <= 85:
-            # rospy.loginfo("got it")
-            # rospy.loginfo("before current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
+            # #rospy.loginfo("got it")
+            # #rospy.loginfo("before current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
             self.blackboard["angles"]["pan"]=[i]
             self.blackboard["angles"]["tilt"]=[self.scanning_tilt]
-            # rospy.loginfo("After current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
+            # #rospy.loginfo("After current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
             yield True
         else:
             self.reintialize()
@@ -310,7 +316,8 @@ class behavior:
                 Yields True: 1. If the ball was spotted while in turning the body (breaked out of loop)
                 Yields False: If it turned the body three times successfully
         '''
-        rospy.loginfo("at turn body search")
+        #rospy.loginfo("at turn body search")
+        delay(1)
         self.CT()
         for i in range(3):
             self.blackboard["robot_cmd_pub"].publish('turn left',250)
@@ -359,12 +366,12 @@ class behavior:
                    2. self.Error2 => it is the tolerance of the average of the 10 pan angle readings to decide settlement.
                             Increase this and the will think the ball is settled immediately.
         '''
-        rospy.loginfo("I'm in camera track mode")
+        #rospy.loginfo("I'm in camera track mode")
         self.CTDone=False
         self.PrevPanData=len(self.blackboard["angles"]["pan"])
         self.counter=0
         while not self.CTDone:
-            rospy.loginfo("checking out the while loop")
+            #rospy.loginfo("checking out the while loop")
             self.currPanData=len(self.blackboard["angles"]["pan"])
             if self.PrevPanData==self.currPanData:
                 self.counter+=1
@@ -378,31 +385,31 @@ class behavior:
                 self.blackboard["ctSucceeded"]=False
                 # Yield True to exit this leaf 'cause these node is called under owyl.repeatUntilSucceed.
                 # Will notify next node that camera track has failed using the ctSucceed flag.
-                rospy.loginfo('about to exit camera track due to failure')
+                #rospy.loginfo('about to exit camera track due to failure')
                 self.CTDone=True
                 yield True
             else:    
                 if len(self.blackboard["angles"]["pan"])<self.cameraSettleTolerance:
                     # not enough data yet to decide wheter camera has settled or not!
-                    #rospy.loginfo("current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
+                    ##rospy.loginfo("current pan angles %f  ",self.blackboard["angles"]["pan"][-1])
                     self.CT()
                     
                     self.PrevPanData=self.currPanData
                     yield False
                 else:
-                    #rospy.loginfo("In else stat")
+                    ##rospy.loginfo("In else stat")
                     self.Mean=np.mean(self.blackboard["angles"]["pan"][-10:-1])
-                    # rospy.loginfo("This is the mean" + str(Mean))
+                    # #rospy.loginfo("This is the mean" + str(Mean))
                     self.check1=(self.blackboard["angles"]["pan"][-1]) + self.Error2
                     self.check2=(self.blackboard["angles"]["pan"][-1]) - self.Error2
                     # check if pan angles has settled (in effect camera track has settled)
                     self.PrevPanData=self.currPanData
                     if self.Mean<=self.check1 and self.Mean>=self.check2:
                         #record heading degrees right after the end of camera tracking
-                        self.blackboard["bodyPose"].append(self.blackboard["angles"]["pan"][-1]-45)
+                        self.blackboard["bodyPose"].append(self.blackboard["angles"]["pan"][-1]-46)
                         self.blackboard["HeadingAfterCT"].append(self.getCompass()[-1])
                         #Camera Track done!
-                        rospy.loginfo("Done with CT")
+                        #rospy.loginfo("Done with CT")
                         self.blackboard["ctSucceeded"]=True
                         self.CTDone=True
                         yield True
@@ -426,7 +433,7 @@ class behavior:
 
     @owyl.taskmethod
     def isCameraTrackDone(self, **kwargs):
-        # rospy.loginfo("I'm called to after camear track")
+        # #rospy.loginfo("I'm called to after camear track")
         '''
             N.B. This is generator, not a normal python function
             Checks if the camera track is done successfully or not.
@@ -473,7 +480,7 @@ class behavior:
         '''
 
 
-        # rospy.loginfo("I'm in Body Track mode")
+        # #rospy.loginfo("I'm in Body Track mode")
         bodyPose=self.blackboard["bodyPose"][0]  # This holds how much the body needs to move. Check this value 
                                                  # track is not satisfactory. Possible problems are because 45 is 
                                                 # used as a base initial value. so make sure 45 degree pan angle turns the camera
@@ -484,7 +491,7 @@ class behavior:
         while not self.BTDone:
             drift=heading[-1]-self.getHeadingCT()
 
-            # rospy.loginfo("bodyPose= %f,  CH= %f, ref= %f, drift= %f",bodyPose,heading[-1],self.getHeadingCT(),drift)
+            # #rospy.loginfo("bodyPose= %f,  CH= %f, ref= %f, drift= %f",bodyPose,heading[-1],self.getHeadingCT(),drift)
             if abs(drift)<abs(bodyPose):
                 # Body has to got rotate some degree yet
                  
@@ -495,10 +502,10 @@ class behavior:
                 self.blackboard["robot_cmd_pub"].publish(direction,120)
                 delay(2.0)
                 yield False
-                # rospy.loginfo("working on turning on the body")
+                # #rospy.loginfo("working on turning on the body")
             else:
                 # if the drift of compass is in range,  Done with BodyTrack
-                # rospy.loginfo("Drift is correct")
+                # #rospy.loginfo("Drift is correct")
                 delay(2.0)
                 self.BTDone=True
                 yield True
@@ -553,8 +560,8 @@ class behavior:
             Publishes the last pan and tilt angles from the pan and tilt lists
         '''
 
-        #rospy.loginfo("CALLED")
-        # rospy.loginfo("pan %f  , tilt %f  ",self.blackboard["angles"]["pan"][-1],self.blackboard["angles"]["tilt"][-1])
+        ##rospy.loginfo("CALLED")
+        # #rospy.loginfo("pan %f  , tilt %f  ",self.blackboard["angles"]["pan"][-1],self.blackboard["angles"]["tilt"][-1])
         self.tilt_head(self.blackboard["angles"]["tilt"][-1])
         delay(0.1)
         self.pan_head(self.blackboard["angles"]["pan"][-1])
@@ -633,14 +640,17 @@ def faceDetected(points):
 
     '''
 
+    global tPrev
+    tCurrent=time.time()
+    dt=abs(tCurrent-tPrev)
     # grab the top left corner as x-axis
     x=points.x
     # gradthe top left corner as y-axis
     y=points.y
 
     # Ideally the point should be at the center of the camera view (i.e (x,y)= (0.5,0.5))
-    ideal_left = 0.5
-    ideal_top  = 0.5 
+    ideal_left = 0.3
+    ideal_top  = 0.6 
     
     # Find the derivative terms
     dx=(x-x_prev)/dt
@@ -655,11 +665,11 @@ def faceDetected(points):
     temp1=board["angles"]["pan"][-1] + correction_pan
     temp2=board["angles"]["tilt"][-1]- correction_tilt
 
-    # rospy.loginfo("This is pan and tilt correction %f   %f :  ",correction_pan, correction_tilt)
+    # #rospy.loginfo("This is pan and tilt correction %f   %f :  ",correction_pan, correction_tilt)
     # Clamp pan and tilt angles
     board["angles"]["pan"].append(clamp(0, temp1, 90))
     board["angles"]["tilt"].append(clamp(0, temp2, 90))
-
+    tPrev=tCurrent
 
 def readSonarDist(data):
     '''
@@ -726,11 +736,11 @@ if __name__=="__main__":
     # Initialize terms for PD controllers
     x_prev=board["start_pan"]   # previous x-pos
     y_prev=board["start_tilt"]   # previous y-Pos
-    k=3.5       # constant of linear term
+    k=2.5       # constant of linear term
     kdx=0.0005      # differential pan gain 
-    kdy=0.00000     # differential tilt gain
+    kdy=0.000    # differential tilt gain
     dt=0.1     # rate of time between call back ... I guessed this one
-
+    tPrev=time.time()
     # Create a behavior tree using the blackboard object board
     be=behavior(board)
 
@@ -747,7 +757,7 @@ if __name__=="__main__":
     rate=rospy.Rate(100)#100hz
     # rospy.spin()
     while not rospy.is_shutdown():
-        #rospy.loginfo("Here in the loop")
+        ##rospy.loginfo("Here in the loop")
         be_tree.next()
         rate.sleep()
-    #rospy.loginfo("bye")
+    ##rospy.loginfo("bye")

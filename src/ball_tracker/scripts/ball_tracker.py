@@ -12,10 +12,10 @@ class BallTracker:
     NODE_NAME = 'ball_tracker'
 
     def __init__(self):
-        # self.hsv_lower = np.array([3, 80, 150], np.uint8)
-        # self.hsv_upper = np.array([7, 240, 255], np.uint8)
-        self.hsv_lower = np.array([20, 100, 100], np.uint8)
-        self.hsv_upper = np.array([30, 200, 200], np.uint8)
+        # self.hsv_lower = np.array([12, 91, 84], np.uint8)
+        # self.hsv_upper = np.array([96, 204, 255], np.uint8)
+        self.hsv_lower = np.array([12, 188, 122], np.uint8)
+        self.hsv_upper = np.array([61, 213, 255], np.uint8)
         self.publisher = rospy.Publisher('/ball_pose', Point, queue_size=10)
         self.bridge = CvBridge()
         self.image_subscriber = rospy.Subscriber("/cv_camera/image_raw", Image, self.callback)
