@@ -58,7 +58,7 @@ class behavior:
                 Creates a tree and returns
                 owyl.visit method to visit next nodes in the tree.
         '''
-        # tree=owyl.repeatAlways(self.isCameraTrack())
+        # tree=owyl.repeatAlways(self.cameraTrack())  # For testing only the camera tracker ... see method cameraTrack() for details
         tree=owyl.repeatAlways(
                 owyl.sequence(
                     owyl.selector(self.checkIfBall(),owyl.selector(self.search85(),self.search60(),self.search35(),self.turnBody()))
@@ -69,7 +69,6 @@ class behavior:
                     )
                 )
          
-        # tree=owyl.repeatAlways(self.isCameraTrack())
         return owyl.visit(tree,blackboard=self.blackboard)
     
     def clamp(self,low, value, high):
@@ -366,7 +365,7 @@ class behavior:
                    2. self.Error2 => it is the tolerance of the average of the 10 pan angle readings to decide settlement.
                             Increase this and the will think the ball is settled immediately.
         '''
-        #rospy.loginfo("I'm in camera track mode")
+        rospy.loginfo("I'm in camera track mode")
         self.CTDone=False
         self.PrevPanData=len(self.blackboard["angles"]["pan"])
         self.counter=0
@@ -421,10 +420,10 @@ class behavior:
 
         '''
         ##  Testing code for camera tracker!
-            Comment the above code; uncomment this one and paste the below code on the build_tree to test the camera
-            tracking node only. Can be used to find a good PD controller gain just by running the camera tracker only.
-              "paste this code to the creat_main_tree at the top of the class"  
-                        owyl.repeatAlways(cameraTrack())  OR just uncomment it in that function
+            # Comment the above code; uncomment this one and paste the below code on the build_tree to test the camera
+            # tracking node only. Can be used to find a good PD controller gain just by running the camera tracker only.
+            #   "paste this code to the creat_main_tree at the top of the class"  
+            #             owyl.repeatAlways(cameraTrack())  OR just uncomment it in that function
         # while True:
         #     self.CT()
         #     yield False
@@ -650,7 +649,7 @@ def faceDetected(points):
 
     # Ideally the point should be at the center of the camera view (i.e (x,y)= (0.5,0.5))
     ideal_left = 0.3
-    ideal_top  = 0.6 
+    ideal_top  = 0.45 
     
     # Find the derivative terms
     dx=(x-x_prev)/dt
@@ -658,8 +657,8 @@ def faceDetected(points):
 
 
     # Find the control signal using PD controller
-    correction_pan = k*(ideal_left - x)-kdx*(dx) 
-    correction_tilt= k*(ideal_top - y)-kdy*(dy)
+    correction_pan = kx*(ideal_left - x)-kdx*(dx) 
+    correction_tilt= ky*(ideal_top - y)-kdy*(dy)
 
     # prepare for clamping the values
     temp1=board["angles"]["pan"][-1] + correction_pan
@@ -736,9 +735,10 @@ if __name__=="__main__":
     # Initialize terms for PD controllers
     x_prev=board["start_pan"]   # previous x-pos
     y_prev=board["start_tilt"]   # previous y-Pos
-    k=2.5       # constant of linear term
-    kdx=0.0005      # differential pan gain 
-    kdy=0.000    # differential tilt gain
+    kx=4.5       # constant term for x direction
+    ky=2.5       # constant term for y direction
+    kdx=0.0008      # differential pan gain 
+    kdy=-0.0002    # differential tilt gain
     dt=0.1     # rate of time between call back ... I guessed this one
     tPrev=time.time()
     # Create a behavior tree using the blackboard object board
