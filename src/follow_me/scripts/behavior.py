@@ -319,7 +319,7 @@ class behavior:
         delay(1)
         self.CT()
         for i in range(3):
-            self.blackboard["robot_cmd_pub"].publish('turn left',250)
+            self.blackboard["robot_cmd_pub"].publish('turn left',200)
             if len(self.blackboard["angles"]["pan"])>10:
                 break
             delay(4)
@@ -405,7 +405,7 @@ class behavior:
                     self.PrevPanData=self.currPanData
                     if self.Mean<=self.check1 and self.Mean>=self.check2:
                         #record heading degrees right after the end of camera tracking
-                        self.blackboard["bodyPose"].append(self.blackboard["angles"]["pan"][-1]-46)
+                        self.blackboard["bodyPose"].append(self.blackboard["angles"]["pan"][-1]-45)
                         self.blackboard["HeadingAfterCT"].append(self.getCompass()[-1])
                         #Camera Track done!
                         #rospy.loginfo("Done with CT")
@@ -498,7 +498,7 @@ class behavior:
                     direction='turn left'
                 else:
                     direction='turn right'
-                self.blackboard["robot_cmd_pub"].publish(direction,120)
+                self.blackboard["robot_cmd_pub"].publish(direction,100)
                 delay(2.0)
                 yield False
                 # #rospy.loginfo("working on turning on the body")
