@@ -14,10 +14,11 @@ class BallTracker:
     def __init__(self):
         # self.hsv_lower = np.array([12, 91, 84], np.uint8)
         # self.hsv_upper = np.array([96, 204, 255], np.uint8)
-        self.hsv_lower = np.array([12, 188, 122], np.uint8)
-        self.hsv_upper = np.array([61, 213, 255], np.uint8)
+        self.hsv_lower = np.array([43, 67, 53], np.uint8)#np.array([12, 188, 122], np.uint8)
+        self.hsv_upper = np.array([101, 255, 255], np.uint8)#np.array([61, 213, 255], np.uint8)
         self.publisher = rospy.Publisher('/ball_pose', Point, queue_size=10)
         self.bridge = CvBridge()
+        #self.image_subscriber = rospy.Subscriber("/camera/image_raw", Image, self.callback)
         self.image_subscriber = rospy.Subscriber("/cv_camera/image_raw", Image, self.callback)
 
     def callback(self, data):
@@ -26,6 +27,8 @@ class BallTracker:
             ball_pose = self.detect_ball(frame)
             if ball_pose != None:
                 self.publisher.publish(ball_pose)
+            else:
+                self.publisher.publish(-1.0,-1.0,-1.0)#no ball found .. mandeep
             cv2.imshow("Live Feed", frame)
             cv2.waitKey(10)
         except CvBridgeError, e:

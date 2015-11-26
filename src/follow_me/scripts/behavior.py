@@ -52,7 +52,7 @@ class behavior:
                 -------------------------------------------------------------------------       self.cameraTrack()                                  self.isBodyTrack()
                 |                  |                |                   |               |       
         self.checkIfBall() self.search85()   self.search60()  self.search35() self.turnBody()
-
+                                    60()                35()            10()
 
             Returns:
                 Creates a tree and returns
@@ -161,13 +161,13 @@ class behavior:
                     but more delay time (or failure to spot the ball)
         '''
         # #rospy.loginfo("at 80 search")
-        self.scanning_tilt=85            # Here you can change the tilt angle
+        self.scanning_tilt=60#85            # Here you can change the tilt angle
         self.pan_head(0)
         delay(1)
         self.tilt_head(self.scanning_tilt)
         delay(1)
         # Next turn the body smoothly from right to left at a step of 5 degrees for a total of 90 degrees
-        for i in range (10,95,10):
+        for i in range (10,90,10): #10,95,10
             self.pan_head(i)
             delay(0.5)
             # check if a ball was spotted every multiple of 10 degree angle
@@ -216,13 +216,13 @@ class behavior:
                     but more delay time (or failure to spot the ball)
         '''
         # #rospy.loginfo("at 60 search")
-        self.scanning_tilt=60
+        self.scanning_tilt=35#60
         # self.pan_head(0);
         delay(1)
         self.tilt_head(self.scanning_tilt);
         delay(1)
         # Next turn the body smoothly from right to left at a step of 5 degrees for a total of 90 degrees
-        ii=range(0,95,10)
+        ii=range(0,90,10)#0,95,10
         ii.reverse()
         for i in ii:
             self.pan_head(i)
@@ -271,13 +271,13 @@ class behavior:
                     but more delay time (or failure to spot the ball)
         '''
         # #rospy.loginfo("at 35 search")
-        self.scanning_tilt=35
+        self.scanning_tilt=10#35
         self.pan_head(0);
         delay(1)
         self.tilt_head(self.scanning_tilt);
         delay(1)
         # Next turn the body smoothly from right to left at a step of 5 degrees for a total of 90 degrees
-        for i in range (10,95,10):
+        for i in range (10,90,10):#10,95,10
             self.pan_head(i)
             delay(0.5)
             # check if a ball was spotted every 10 multiple degree angle
@@ -319,7 +319,8 @@ class behavior:
         delay(1)
         self.CT()
         for i in range(3):
-            self.blackboard["robot_cmd_pub"].publish('turn left',200)
+            self.blackboard["robot_cmd_pub"].publish('turn right',200)
+            #self.blackboard["robot_cmd_pub"].publish('turn left',200)
             if len(self.blackboard["angles"]["pan"])>10:
                 break
             delay(4)
@@ -495,9 +496,9 @@ class behavior:
                 # Body has to got rotate some degree yet
                  
                 if bodyPose >=0:
-                    direction='turn left'
+                    direction='turn right'#left
                 else:
-                    direction='turn right'
+                    direction='turn left'#
                 self.blackboard["robot_cmd_pub"].publish(direction,100)
                 delay(2.0)
                 yield False
@@ -648,8 +649,8 @@ def faceDetected(points):
     y=points.y
 
     # Ideally the point should be at the center of the camera view (i.e (x,y)= (0.5,0.5))
-    ideal_left = 0.3
-    ideal_top  = 0.45 
+    ideal_left = 0.5#.3
+    ideal_top  = 0.45# .45
     
     # Find the derivative terms
     dx=(x-x_prev)/dt
@@ -666,8 +667,8 @@ def faceDetected(points):
 
     # #rospy.loginfo("This is pan and tilt correction %f   %f :  ",correction_pan, correction_tilt)
     # Clamp pan and tilt angles
-    board["angles"]["pan"].append(clamp(0, temp1, 90))
-    board["angles"]["tilt"].append(clamp(0, temp2, 90))
+    board["angles"]["pan"].append(90-clamp(0, temp1, 90))#
+    board["angles"]["tilt"].append(90-clamp(0, temp2, 90))#90-
     tPrev=tCurrent
 
 def readSonarDist(data):
@@ -714,7 +715,7 @@ if __name__=="__main__":
 
 
     # create an object of black board 
-    board=blackboard.Blackboard()
+    board=blackboard.Blackboard('behavior')
     
     # publishers on board
     board["pan_angle_pub"]  = pan_angle_pub
